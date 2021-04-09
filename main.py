@@ -1,13 +1,25 @@
-import torch as t
+import matplotlib.pyplot as plt
+import numpy as np
+
+points = np.arange(-5,5,0.01)
 
 
+xs,ys = np.meshgrid(points,points)
 
-a = t.Tensor(5,3)
-b = t.rand(5,3)
-print(a+b)
+z = np.sqrt(xs**2+ys**2)
 
-a= a.cuda()
-b=b.cuda()
+fig = plt.figure(0)
 
-print(a+b)
+ax = fig.add_subplot(221)
+ax.imshow(z)
 
+ax = fig.add_subplot(222)
+ax.imshow(z,cmap=plt.cm.gray)
+
+ax = fig.add_subplot(223)
+ax.imshow(z,cmap=plt.cm.cool)
+
+ax = fig.add_subplot(224)
+ax.imshow(z,cmap=plt.cm.hot)
+
+plt.show()
