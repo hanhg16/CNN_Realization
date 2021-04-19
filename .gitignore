@@ -1,3 +1,6 @@
 .idea/
 datasets/
 venv/
+nn.Module_practice/imgs/*.png
+
+

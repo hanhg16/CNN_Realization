@@ -1,18 +1,19 @@
-import matplotlib.pyplot as plt
-import numpy as np
+from PIL import Image
+from torchvision.transforms import ToTensor, ToPILImage
 import torch as t
+import torch.nn as nn
 from torch.autograd import Variable as V
+import numpy as np
 
-x = V(t.ones(1))
-b = V(t.rand(1), requires_grad=True)
-w = V(t.rand(1), requires_grad=True)
-y = w * x
-z = b + y
+img = Image.open('nn.Module_practice/imgs/lena.bmp')
+to_tensor = ToTensor()
+to_pil = ToPILImage()
+input = to_tensor(img)
 
+pool = nn.AvgPool2d(2,2)
+l = list(pool.parameters())
+print(l)
 
-z.backward(retain_graph=True
-           )
-print(t.autograd.grad(y,w))
-print(w.grad)
-
-
+output = pool(V(input))
+out = to_pil(output)
+out.show()
