@@ -53,6 +53,7 @@ if __name__ == '__main__':
     test()
 
 
+
 '''
 CPU训练时间：3min 16sec;epoch==5
 GPU训练时间：3min 09sec;epoch==5

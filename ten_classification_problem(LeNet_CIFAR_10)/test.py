@@ -28,6 +28,7 @@ def test_all():
         _, predicted = t.max(outputs.data, 1)
         total += labels.size(0)
         correct += (predicted == labels).sum()
-    print('测试集中的预测准确率为: %d %%' %(100*correct/total))
+    print('测试集中的预测准确率为: %d %'
+          '%' %(100*correct/total))
 
 

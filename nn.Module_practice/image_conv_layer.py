@@ -10,7 +10,7 @@ lena = Image.open('imgs/lena.bmp')
 
 input = to_tensor(lena).unsqueeze(0)  # 从3维变到4维，因为第一维是batch_size，此处加上第一维表示batch_size为1
 
-kernel = t.ones(3, 3)/9
+kernel = t.zeros(3, 3)/9
 #kernel[1][1] = -1
 print(kernel)
 conv = nn.Conv2d(1, 1, (3, 3), 1, bias=False)

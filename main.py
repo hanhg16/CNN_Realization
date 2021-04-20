@@ -4,16 +4,16 @@ import torch as t
 import torch.nn as nn
 from torch.autograd import Variable as V
 import numpy as np
+import math
 
-img = Image.open('nn.Module_practice/imgs/lena.bmp')
-to_tensor = ToTensor()
-to_pil = ToPILImage()
-input = to_tensor(img)
+module = nn.Module()
+print(getattr(module,'training'))
+#module.__getattr__('training')
+module.param = t.zeros(2,2)
+module.param1 = nn.Parameter(t.ones(3,3))
 
-pool = nn.AvgPool2d(2,2)
-l = list(pool.parameters())
-print(l)
+print(getattr(module,'param'))
+print(getattr(module,'param1'))
+print(module.__getattr__('param1'))
 
-output = pool(V(input))
-out = to_pil(output)
-out.show()
+t.save(module.state_dict(),'save_module/net.pth')
