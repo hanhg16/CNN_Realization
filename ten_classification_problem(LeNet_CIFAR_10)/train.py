@@ -46,11 +46,8 @@ def train(epoch=3):
 
 
 if __name__ == '__main__':
-    test()
-    train(5)
-    test()
-    test()
-    test()
+    train(1)
+
 
 
 

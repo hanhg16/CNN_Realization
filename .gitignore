@@ -2,5 +2,6 @@
 datasets/
 venv/
 nn.Module_practice/imgs/*.png
+nn.Module_practice/imgs/*.jpg
 
 

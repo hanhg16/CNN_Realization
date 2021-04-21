@@ -17,7 +17,7 @@ class Net(nn.Module):
     def forward(self, x):
         x = F.max_pool2d(F.relu(self.conv1(x)), (2, 2))
         x = F.max_pool2d(F.relu(self.conv2(x)), 2)
-        x = x.view(x.size(0), -1)
+        x = x.view(x.size(0), -1) #将x reshape为1维tensor以用于之后的全连接层计算，此处的x.size(0)是x的batch_size，即reshape前x的size为[4,16,5,5],view后为[4,400]
         x = F.relu((self.fc1(x)))
         x = F.relu((self.fc2(x)))
         x = self.fc3(x)
