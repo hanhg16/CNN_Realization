@@ -1,0 +1,2 @@
+mean = [tensor(0.4883), tensor(0.4551), tensor(0.4170)]
+std = [tensor(0.2294), tensor(0.2250), tensor(0.2252)]
